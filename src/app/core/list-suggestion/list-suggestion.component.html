@@ -1,0 +1,25 @@
+<div class="list-suggestion-container">
+  <div class="search-section">
+    <h2>Liste des Suggestions</h2>
+  </div>
+
+  <div class="suggestions-grid">
+    <div
+      *ngFor="let suggestion of suggestions"
+      class="suggestion-card"
+    >
+      <div class="card-header">
+        <span class="category-badge">{{ suggestion.category }}</span>
+        <span class="status-badge">{{ suggestion.status }}</span>
+      </div>
+
+      <h3 class="suggestion-title">{{ suggestion.title }}</h3>
+      <p class="suggestion-description">{{ suggestion.description }}</p>
+
+      <div class="card-meta">
+        <span class="date"> {{ suggestion.date | date: 'dd/MM/yyyy' }}</span>
+        <span class="likes"> {{ suggestion.nbLikes }} like(s)</span>
+      </div>
+    </div>
+  </div>
+</div>
