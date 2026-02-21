@@ -1,0 +1,55 @@
+<div class="list-suggestion-container">
+  <div class="search-section">
+    <h2>Liste des suggestions</h2>
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Rechercher une suggestion"
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <div class="suggestions-list">
+    <div *ngFor="let suggestion of filteredSuggestions" class="suggestion-card">
+      <div class="card-content">
+        <h3 class="suggestion-title">{{ suggestion.title }}</h3>
+        
+        <div class="suggestion-meta">
+          <span class="category">{{ suggestion.category }}</span>
+          <span class="date">{{ suggestion.date | date: 'dd MMM yyyy' }}</span>
+        </div>
+        
+        <p class="suggestion-description">{{ suggestion.description }}</p>
+        
+        <div class="status-badge" [ngClass]="getStatusClass(suggestion.status)">
+          {{ getStatusText(suggestion.status) }}
+        </div>
+        
+        <!-- VÉRIFIEZ CETTE PARTIE -->
+        <div class="card-actions">
+          <button (click)="incrementLikes(suggestion)" class="btn btn-like">
+             Like {{ suggestion.nbLikes }}
+          </button>
+          <button
+            (click)="addToFavorites(suggestion)"
+            class="btn btn-favorite"
+            [class.is-favorite]="isFavorite(suggestion)"
+          >
+             Ajouter aux favoris
+          </button>
+          <button (click)="viewDetails(suggestion.id)" class="btn btn-details">
+             Détails
+          </button>
+        </div>
+        <!-- FIN DE LA PARTIE À VÉRIFIER -->
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" *ngIf="filteredSuggestions.length === 0">
+    <p>Aucune suggestion ne correspond à votre recherche.</p>
+  </div>
+</div>
