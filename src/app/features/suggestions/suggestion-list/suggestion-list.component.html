@@ -1,6 +1,13 @@
 <div class="list-suggestion-container">
   <div class="search-section">
     <h2>Liste des suggestions</h2>
+    
+    <div class="action-buttons">
+      <button (click)="addSuggestion()" class="btn btn-add">
+         Ajouter une suggestion
+      </button>
+    </div>
+    
     <div class="search-bar">
       <input
         type="text"
@@ -27,7 +34,6 @@
           {{ getStatusText(suggestion.status) }}
         </div>
         
-        <!-- VÉRIFIEZ CETTE PARTIE -->
         <div class="card-actions">
           <button (click)="incrementLikes(suggestion)" class="btn btn-like">
              Like {{ suggestion.nbLikes }}
@@ -43,13 +49,12 @@
              Détails
           </button>
         </div>
-        <!-- FIN DE LA PARTIE À VÉRIFIER -->
         
       </div>
     </div>
   </div>
 
   <div class="no-results" *ngIf="filteredSuggestions.length === 0">
-    <p>Aucune suggestion ne correspond à votre recherche.</p>
+    <p> Aucune suggestion ne correspond à votre recherche.</p>
   </div>
 </div>

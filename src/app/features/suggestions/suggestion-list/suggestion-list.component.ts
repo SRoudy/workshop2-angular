@@ -102,4 +102,9 @@ export class SuggestionListComponent {
   viewDetails(id: number): void {
     this.router.navigate(['/suggestions', id]);
   }
+
+  // ← NOUVELLE MÉTHODE
+  addSuggestion(): void {
+    this.router.navigate(['/suggestions/add']);
+  }
 }
