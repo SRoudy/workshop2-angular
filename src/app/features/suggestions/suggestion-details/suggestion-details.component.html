@@ -1,1 +1,48 @@
-<p>suggestion-details works!</p>
+<div class="details-container" *ngIf="suggestion">
+  <div class="details-card">
+    <h2>{{ suggestion.title }}</h2>
+    
+    <div class="detail-row">
+      <strong>Catégorie :</strong>
+      <span class="category">{{ suggestion.category }}</span>
+    </div>
+    
+    <div class="detail-row">
+      <strong>Date :</strong>
+      <span>{{ suggestion.date | date: 'dd MMM yyyy' }}</span>
+    </div>
+    
+    <div class="detail-row">
+      <strong>Statut :</strong>
+      <span class="status-badge" [ngClass]="getStatusClass(suggestion.status)">
+        {{ getStatusText(suggestion.status) }}
+      </span>
+    </div>
+    
+    <div class="detail-row">
+      <strong>Likes :</strong>
+      <span>{{ suggestion.nbLikes }}</span>
+    </div>
+    
+    <div class="detail-row">
+      <strong>Description :</strong>
+    </div>
+    <p class="description">{{ suggestion.description }}</p>
+    
+    <div class="action-buttons">
+      <button (click)="backToList()" class="btn btn-back">
+         Retour à la liste
+      </button>
+      <button (click)="updateSuggestion()" class="btn btn-update">
+         Modifier
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="error-message" *ngIf="!suggestion">
+  <p>Suggestion non trouvée</p>
+  <button (click)="backToList()" class="btn btn-back">
+    ← Retour à la liste
+  </button>
+</div>

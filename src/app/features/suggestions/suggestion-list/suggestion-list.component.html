@@ -34,21 +34,24 @@
           {{ getStatusText(suggestion.status) }}
         </div>
         
-        <div class="card-actions">
-          <button (click)="incrementLikes(suggestion)" class="btn btn-like">
-             Like {{ suggestion.nbLikes }}
-          </button>
-          <button
-            (click)="addToFavorites(suggestion)"
-            class="btn btn-favorite"
-            [class.is-favorite]="isFavorite(suggestion)"
-          >
-             Ajouter aux favoris
-          </button>
-          <button (click)="viewDetails(suggestion.id)" class="btn btn-details">
-             Détails
-          </button>
-        </div>
+        <div class="card-actions" *ngIf="suggestion.status !== 'refusee'">
+  <button (click)="incrementLikes(suggestion)" class="btn btn-like">
+     Like {{ suggestion.nbLikes }}
+  </button>
+  <button
+    (click)="addToFavorites(suggestion)"
+    class="btn btn-favorite"
+    [class.is-favorite]="isFavorite(suggestion)"
+  >
+     Ajouter aux favoris
+  </button>
+  <button (click)="viewDetails(suggestion.id)" class="btn btn-details">
+     Update
+  </button>
+  <button (click)="deleteSuggestion(suggestion.id)" class="btn btn-delete">
+     Supprimer
+  </button>
+</div>
         
       </div>
     </div>

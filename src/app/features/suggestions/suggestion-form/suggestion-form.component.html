@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="form-card">
-    <h2>Ajouter une suggestion</h2>
+    <h2>{{ isEditMode ? 'Modifier une suggestion' : 'Ajouter une suggestion' }}</h2>
     
     <form [formGroup]="suggestionForm" (ngSubmit)="onSubmit()">
       
@@ -99,12 +99,12 @@
       <!-- btn -->
       <div class="form-actions">
         <button
-          type="submit"
-          class="btn btn-submit"
-          [disabled]="suggestionForm.invalid"
-        >
-          Soumettre
-        </button>
+  type="submit"
+  class="btn btn-submit"
+  [disabled]="suggestionForm.invalid"
+>
+  {{ isEditMode ? 'Modifier' : 'Soumettre' }}
+</button>
         <button
           type="button"
           class="btn btn-cancel"

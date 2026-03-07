@@ -15,13 +15,11 @@ const routes: Routes = [
     loadChildren: () => import('./features/suggestions/suggestions.module').then(m => m.SuggestionsModule)
   },
   
-  // Lazy Loading pour le module Users
   {
     path: 'users',
     loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule)
   },
   
-  // Route 404
   { path: '**', component: NotfoundComponent }
 ];
 

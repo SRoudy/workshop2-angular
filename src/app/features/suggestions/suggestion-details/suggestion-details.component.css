@@ -1,0 +1,110 @@
+.details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.details-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #2196F3;
+  padding-bottom: 0.5rem;
+}
+
+.detail-row {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-row strong {
+  color: #2c3e50;
+  min-width: 120px;
+}
+
+.category {
+  color: #2196F3;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-accepted {
+  background-color: #C8E6C9;
+  color: #2E7D32;
+}
+
+.status-refused {
+  background-color: #FFCDD2;
+  color: #C62828;
+}
+
+.status-pending {
+  background-color: #FFF9C4;
+  color: #F57F17;
+}
+
+.description {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-back {
+  background-color: #666;
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: #555;
+}
+
+.btn-update {
+  background-color: #FF9800;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #F57C00;
+}
+
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  color: #f44336;
+}

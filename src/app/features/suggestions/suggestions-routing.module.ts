@@ -11,7 +11,8 @@ const routes: Routes = [
     component: SuggestionsComponent,
     children: [
       { path: '', component: SuggestionListComponent },
-      { path: 'add', component: SuggestionFormComponent },  // ← NOUVELLE ROUTE
+      { path: 'add', component: SuggestionFormComponent },
+      { path: 'edit/:id', component: SuggestionFormComponent },  
       { path: ':id', component: SuggestionDetailsComponent }
     ]
   }
